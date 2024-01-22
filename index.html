@@ -7,106 +7,23 @@
     <title></title>
   </head>
   <body>
+     <nav class="navbar">
+       <div>
+         <p>druid</p>
+       </div>
+       <div>
+         <p>barbarian</p>
+       </div>
+       <div>
+         <p>monk</p>
+       </div>
+       <div>
+         <p>cleric</p>
+       </div>
+       <div>
+         <p>paladin</p>
+       </div>
+     </nav>
     
-    <header id="header">
-	  <Div id="dropdown-button">
-        <button id = "menu">Menu</button>
-	      <span></span>
-	      <ul id="dropdown-content">
-	        <li ><button id="li-info">Info</button></li>
-		    <li ><button id="li-project">Project</button></li>
-		    <li ><button id="li-contact">Contact</button></li>
-	      </ul>
-	  </div>
-	</header>
-	<section id="info">
-	</section>
-	<section id="project">
-	</section>
-	<section id="contacts">
-	</section>
   </body>
-  <script>
-      const menuButton = document.getElementById("menu");
-      const content = document.getElementById("dropdown-content");
-      let contentStyle = window.getComputedStyle(content);
-      function menuDrop(){
-        switch(contentStyle.display){
-        case "none": content.style.display = "block";
-        break; 
-        case "block": content.style.display = "none";
-        break;
-        }
-      }    
-     menuButton.addEventListener('click', menuDrop);
-     
-     const infoButton = document.getElementById("li-info");
-     const projectButton = document.getElementById("li-project");
-     const contactButton = document.getElementById("li-contact");
-     const projectSection = document.getElementById("project");
-     const infoSection = document.getElementById("info");
-     const contactSection = document.getElementById("contacts");
-     let infoStyle = window.getComputedStyle(infoSection);
-     let projectStyle = window.getComputedStyle(projectSection);
-     let contactStyle = window.getComputedStyle(contactSection);
-     
-     function slideInfo(){
-         switch(infoStyle.webkitAnimationPlayState){
-         case "paused":
-         infoSection.style.setProperty('animation-play-state','running');
-         break;
-         case "running":infoSection.style.animation = "none";                         
-                        infoSection.offsetHeight;
-                        infoSection.style.animation = null;
-                        break;
-         }
-         projectSection.style.animation = "none";                         
-         projectSection.offsetHeight;
-         projectSection.style.animation = null;
-         contactSection.style.animation = "none";                         
-         contactSection.offsetHeight;
-         contactSection.style.animation = null;
-      };        
-     infoButton.addEventListener('click', slideInfo);
-
-     function slideProject(){
-         switch(projectStyle.webkitAnimationPlayState){
-         case "paused":
-         projectSection.style.setProperty('animation-play-state','running');
-         break;
-         case "running":projectSection.style.animation = "none";                         
-                        projectSection.offsetHeight;
-                        projectSection.style.animation = null;
-                        break;
-         }
-         infoSection.style.animation = "none";                         
-         infoSection.offsetHeight;
-         infoSection.style.animation = null;
-         contactSection.style.animation = "none";                         
-         contactSection.offsetHeight;
-         contactSection.style.animation = null;
-      };        
-    projectButton.addEventListener('click', slideProject);
-
-     function slideContact(){
-         switch(contactStyle.webkitAnimationPlayState){
-         case "paused":
-         contactSection.style.setProperty('animation-play-state','running');
-         break;
-         case "running":contactSection.style.animation = "none";                         
-                        contactSection.offsetHeight;
-                        contactSection.style.animation = null;
-                        break;
-         }
-         infoSection.style.animation = "none";                         
-         infoSection.offsetHeight;
-         infoSection.style.animation = null;
-         projectSection.style.animation = "none";                         
-         projectSection.offsetHeight;
-         projectSection.style.animation = null;
-      };        
-     contactButton.addEventListener('click', slideContact);
-
-
-    </script>
 </html>

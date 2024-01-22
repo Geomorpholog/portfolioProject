@@ -1,130 +1,35 @@
-/*reset all*/
-*{box-sizing:border-box;
+body{box-sizing:border-box
+;margin:0;
+background-color:#000054;}
+main{margin:0;
+}
+
+nav{
+position:fixed;
+width:150px;
+height:100vh;
 margin:0;
-padding:0;
-}
-/*font-reset to 10px*/
-html{
-	font-family:sans-serif;
-	font-size:62.5%;
-}
-
-body{
-	width:100vw;
-	height:100vh;
-	background: black;
-	position:fixed;
-	overflow:hidden;
-}
-/* top header*/
-header{
-	width:100vw;
-	height:50px;
-	background-color:black;
-	border-radius:5px;
-	display:flex;
-	justify-content:end;
-	position:fixed;
-	z-index:5;
-}
-
-#dropdown-button{
-	width:20rem;
-	height:100%;
-	background:rgb(125,125,125, 0.5);
-	}
-#dropdown-button span{
-	background-color:white;
-	width:80%;
-	height:5px;
-}
-/*main screen rule*/
-@media (max-width:400px){
-	#dropdown-button{
-	width:10rem;}
-}
-
-#dropdown-content li{
-	width:100%;
-	height:50px;
-	background:black;
-      text-align:center;
-	display:flex;
-	flex-direction:column;
-	justify-content:center;
-	align-items:center;
-      color:gray;
-	border-top:2px solid gray;
-}
-	#dropdown-content li a{
-		text-decoration:none;
-		font-size:2rem;
-		color:gray;
-	}
-#dropdown-content{
-	display:none;
-	position:relative;
-	top:50px;
-	list-style-type: none;
-}
-
-#menu{
-width:100%;
-height:100%;
-}
-
-/*swap box*/
-@keyframes swap{
-	0%{transform:translateY(0%);}
 	
-	100%{transform:translateY(-90%);}
-}
-/*info section*/
-#info {background:rgb(100,100,100);}
-
-#info{
-width:90%;
-height:1000px;
-background:rgb(100,100,100, 0.5);
-transition: top 0.5s ease 1s;
-position:absolute;
-top:80%;
-margin:auto 5%;
-border-radius:10px;
-z-index:0;
-animation:swap 5s ease 0s 1 forwards paused;
-}
-/*#info:active{
-animation-play-state:running;}*/
-	
-
-	
-/*project section*/
-#project{
-width:90%;
-height:1000px;
-background:rgb(100,100,100, 0.7);
-transition: top 0.5s ease 0.5s;
-position:absolute;
-top:85%;
-margin:auto 5%;
-border-radius:10px;
-z-index:1;
-animation:swap 5s ease 0s 1 forwards paused;
 }
 
+nav div{
+display:flex;
+margin:10px; 10px;
+width:150px;
+height:4em;;
+background:linear-gradient(45deg, #0F0033, #1F22ff);
+border:10px solid #ffffff;
 
-/*contact section*/
-#contacts{
-width:90%;
-height:1000px;
-background:rgb(100,100,100, 0.8);
-transition: top 0.5s ease 1s;
-position:absolute;
-top:90%;
-margin:auto 5%;
-border-radius:10px;
-z-index:2;
-animation:swap 5s ease 0s 1 forwards paused;
+}
+.navbar div:first-of-type{
+
 }
 
+nav div p{
+margin:auto;
+color:#ffffff;
+font-family:Georgia;
+font-weight:1000;
+font-size:1.2rem;
+text-shadow:3px 3px 5px black, -3px -3px 5px black,3px -3px 5px black,-3px 3px 5px black;
+}
