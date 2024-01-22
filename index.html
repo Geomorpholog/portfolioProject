@@ -7,23 +7,59 @@
     <title></title>
   </head>
   <body>
-     <nav class="navbar">
-       <div>
-         <p>druid</p>
-       </div>
-       <div>
-         <p>barbarian</p>
-       </div>
-       <div>
-         <p>monk</p>
-       </div>
-       <div>
-         <p>cleric</p>
-       </div>
-       <div>
-         <p>paladin</p>
-       </div>
-     </nav>
-    
+    <div id="bodydiv">
+      <div id="box" draggable="true">
+        <div class = 'project-tile'>
+          <a href="https://geomorpholog.github.io/Nansen-tribute/">
+          <img src="https://raw.githubusercontent.com/Geomorpholog/Nansen-tribute/main/Nansen.bmp">
+          <p class="project-title">Tribute page</p></a>
+        </div>
+        <div class = 'project-tile'>
+           <a href="https://geomorpholog.github.io/Tech/">
+        <img src="https://raw.githubusercontent.com/Geomorpholog/Tech/main/preview.bmp">
+        <p class="project-title">Technical documentation</p>
+        </a>
+        </div>
+        <div class = 'project-tile'>
+          <a href="https://geomorpholog.github.io/landing/">
+        <img src="https://raw.githubusercontent.com/Geomorpholog/landing/main/PreviewLand.bmp">
+        <p class="project-title">Landing-page</p>
+        </div>
+        <div class = 'project-tile'>
+        </div>
+        <div class = 'project-tile'>
+        </div>
+      </div>
+    </div>
   </body>
+  <script>
+   const box = document.querySelector('#box');
+   const body = document.querySelector('#bodydiv')
+   const boxStyle = window.getComputedStyle(box);
+   console.log(boxStyle);
+     let accum = 0;    
+ 
+   body.addEventListener('click',()=>{
+     box.style.transform = 'none';
+     box.style.top = '90vh';
+     accum = 0;
+
+     
+   })
+
+   let drag = function(event){
+     if(event.deltaY < 0 && accum>-parseInt(boxStyle.height)){
+     accum-=500;
+     box.style.transform = 'translateY('+accum+'px'+')'}
+     else if(event.deltaY > 0 && accum<0){
+     accum+=500;
+     box.style.transform = 'translateY('+accum+'px'+')'}
+     console.log(accum);
+     console.log(parseInt(boxStyle.height));
+   }
+   
+   box.addEventListener('wheel',drag);
+
+
+  </script>
 </html>
